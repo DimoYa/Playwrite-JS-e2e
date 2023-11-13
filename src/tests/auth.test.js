@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.only('Verify "All Books" link is visible after login', async ({ page }) => {
+test('Verify "All Books" link is visible after login', async ({ page }) => {
 
     await page.goto('http://localhost:3000');
     await page.waitForSelector('nav.navbar');
