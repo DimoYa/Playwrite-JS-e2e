@@ -28,14 +28,19 @@ jobs:
         cd ./src/server
         npm install
         node server.js &  # Run in the background
-    - name: Build Playwright
-      run: npm install -D @playwright/test
-      working-directory: ./src
 
   test:
     needs: build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Run e2e tests
-        run: npx playwright test tests
-        working-directory: ./src
+    - name: Build Playwright
+      run: npm install -D @playwright/test
+      working-directory: ./src
+
+    - name: Wait for backend to be ready
+      run: sleep 10s 
+
+    - name: Run e2e tests
+      run: npx playwright test tests
+      working-directory: ./src/server  
