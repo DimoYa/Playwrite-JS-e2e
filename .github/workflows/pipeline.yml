@@ -24,8 +24,9 @@ jobs:
       run: npm install
       working-directory: ./src
     - name: Start FE
-      run: npm run start
-      working-directory: ./src
+      run: |
+        cd ./src
+        npm run start & # Run in the background
     - name: Build and start BE
       run: |
         cd ./src/server
