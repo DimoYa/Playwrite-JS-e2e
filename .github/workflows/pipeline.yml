@@ -23,7 +23,10 @@ jobs:
     - name: Build FE
       run: npm install
       working-directory: ./src
-    - name: Build BE
+    - name: Start FE
+      run: npm run start
+      working-directory: ./src
+    - name: Build and start BE
       run: |
         cd ./src/server
         node server.js & # Run in the background
@@ -32,7 +35,7 @@ jobs:
       run: npx playwright install
 
     - name: Wait for backend to be ready
-      run: sleep 20s 
+      run: sleep 10s 
 
     - name: Run e2e tests
       run: npx playwright test tests
