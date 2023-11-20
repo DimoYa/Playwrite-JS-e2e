@@ -30,7 +30,7 @@ jobs:
         node server.js &  # Run in the background
     
     - name: Build Playwright
-      run: npm install -D @playwright/test
+      run: npx playwright install
 
     - name: Wait for backend to be ready
       run: sleep 10s 
