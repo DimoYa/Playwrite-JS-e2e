@@ -5,7 +5,9 @@
     "main": "index.html",
     "scripts": {
         "test": "mocha tests",
-        "start": "http-server -a localhost -p 3000 -P http://localhost:3000? -c-1"
+        "build": "http-server -p 3000 -a 0.0.0.0",
+        "start": "npm run build && node server.js",
+        "start-for-tests": "http-server -a localhost -p 3000 -P http://localhost:3000? -c-1"
     },
     "author": "",
     "license": "ISC",
