@@ -26,7 +26,7 @@ jobs:
     - name: Start FE
       run: |
         cd ./src
-        npm run start & # Run in the background
+        npm run start-for-tests & # Run in the background
     - name: Start BE
       run: |
         cd ./src/server
