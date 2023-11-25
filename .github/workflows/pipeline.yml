@@ -51,7 +51,7 @@ jobs:
     needs: deploy-backend
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy Back-end
+      - name: Deploy Front-end
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
