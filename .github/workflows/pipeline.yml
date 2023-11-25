@@ -24,16 +24,12 @@ jobs:
       run: npm install
       working-directory: ./src
     - name: Start FE
-      run: |
-        cd ./src
-        npm run start-for-tests & # Run in the background
+      run: npm run start-fe
     - name: Start BE
-      run: |
-        cd ./src/server
-        node server.js & # Run in the background
+      run: npm run start-be
     - name: Build Playwright
       run: npx playwright install
     - name: Run e2e tests
-      run: npx playwright test tests
+      run: npx run test
       working-directory: ./src  
         
