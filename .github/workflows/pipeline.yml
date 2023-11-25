@@ -24,10 +24,10 @@ jobs:
       run: npm install
       working-directory: ./src
     - name: Start FE
-      run: npm run start-fe
+      run: npm run start-fe & # Run in the background
       working-directory: ./src  
     - name: Start BE
-      run: npm run start-be
+      run: npm run start-be & # Run in the background
       working-directory: ./src  
     - name: Build Playwright
       run: npx playwright install
