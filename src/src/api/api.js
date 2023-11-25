@@ -1,7 +1,6 @@
 import * as config from "../config.js"
 
 export const settings = config.settings;
-const test = "test";
 
 async function request(url, options) {
     try {
