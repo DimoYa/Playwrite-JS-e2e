@@ -23,6 +23,8 @@ jobs:
     - name: Build FE
       run: npm install
       working-directory: ./src
+    - name: Change the config value
+      run: echo "export const settings = { host:\"http://localhost:3030\" };" > src/src/config.js
     - name: Start FE
       run: npm run start-fe & # Run in the background
       working-directory: ./src  

@@ -1,0 +1,1 @@
+export const settings = { host: "https://book-be-dk0s.onrender.com" }
