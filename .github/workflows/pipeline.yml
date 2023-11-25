@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Build Test Deploy
 
 on:
   push:
@@ -43,5 +43,16 @@ jobs:
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.MY_RENDER_API_KEY }}    
-    
+          api-key: ${{ secrets.MY_RENDER_Backend_API_KEY }}    
+      - name: Wait 60 sec
+        run:  sleep 60
+
+  deploy-frontend:
+    needs: deploy-backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Back-end
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.MY_RENDER_Backend_API_KEY }}    
