@@ -32,6 +32,6 @@ jobs:
     - name: Build Playwright
       run: npx playwright install
     - name: Run e2e tests
-      run: npx run test
+      run: npm run test
       working-directory: ./src  
         
